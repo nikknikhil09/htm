@@ -1,10 +1,27 @@
 <html>
     <head>
+        <script>
+            function validation(){
+                var firstname=document.getElementById("firstname").value;
+                //var firstname=document.getElementById("firstname").value;
+                if(firstname==""){
+                    document.getElementById("firstname1").innerHTML="error";
+                    //window.alert("eror");
+                    return false;
+                }
+                if(firstname.length<3 || firstname.length>15){
+                    document.getElementById("firstname1").innerHTML="error2";
+                    return false;
+                  }
+                
+                
+              }
+            </script>
 
     </head>
     <body>
         
-        <form name="form1" >
+        <form name="form1" method="POST" onsubmit="return validation()" action="index1.html" >
             <table border="all" align="center">
                 <tr>
                     <td>
@@ -13,15 +30,17 @@
                 </tr>
                 <tr>
                     <td>
-                        First Name<input type="text" name="firstname">
+                        First Name*<input type="text" name="firstname" id="firstname">
+                        <spa id="firstname1"></spa>
                     </td>
                     <td>
-                        Last Name<input type="text" name="lastname">
+                        Last Name<input type="text" name="lastname" id="lastname">
+                        <span id="lastname1"></span>
                     </td>                    
                 </tr>
                 <tr>
                     <td>
-                        Phone Number<input type="number" name="phonenumber"> 
+                        Phone Number<input type="number" name="phonenumber" id="phonenumber"> 
                     </td>
                     <td>
                         Phone type 
@@ -35,10 +54,10 @@
                 </tr>
                 <tr>
                     <td>
-                        Email<input type="email" name="email">
+                        Email<input type="email" name="email" id="email">
                     </td>
                     <td>
-                        Confirm Email<input type="email" name="email">
+                        Confirm Email<input type="email" name="email" id="confirmemail">
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +76,7 @@
                         </select>
                     </td>
                     <td>
-                        Pincode<input type="number" name="pincode">
+                        Pincode<input type="number" name="pincode" id="pincode">
                     </td>
                 </tr>
                 <tr>
